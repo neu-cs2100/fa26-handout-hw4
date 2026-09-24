@@ -9,7 +9,7 @@ In this homework assignment, you will practice:
 - Instantiating an object from a class you wrote
 - Passing mutable objects as arguments to a function
 - Writing `__eq__()` and `__str__()` methods
-- Writing functions with named and default parameters and variable argument lists
+- Writing functions with default parameters and variable argument lists
 
 You can find the instructions for each question in the corresponding files in the `src` directory. The corresponding tests are in the `tests` directory.
 
