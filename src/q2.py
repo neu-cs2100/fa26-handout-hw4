@@ -7,14 +7,14 @@ Write a class TodoList that keeps track of a list of tasks. It should let a user
 
 Requirements:
 
-The constructor should initialize an empty list of tasks that need to be completed.
-Each task should be stored as a string (a description of the task).
-A method add_task(self, description: str) -> None that adds a new task to the todo list.
-A method complete_task(self, index: int = 0) -> None that marks the task at the given index as 
-        completed by removing the task. If the client does not specify an index, the first task 
-        is completed.
-A method get_pending(self) -> list[str] that returns the descriptions of all tasks not yet 
-        completed.
+The constructor should initialize an empty list of unfinished tasks.
+Each unfinished task should be stored as a string (a description of the task).
+A method add_task(self, description: str) -> None that adds a new unfinished task to the todo 
+        list.
+A method complete_task(self, index: int = 0) -> None that, as the task at the given index 
+        is completed, the method is to remove it from the list. If the client does not 
+        specify an index, the first task is completed.
+A method get_pending(self) -> list[str] that returns the descriptions of all unfinished tasks.
 
 Make sure to write appropriate tests in test_q2.py.
 
@@ -36,7 +36,8 @@ print(todo.get_pending())    # []
 """
 
 class TodoList:
-    """Class representing a todo list with tasks that can be added, completed, and viewed."""
+    """Class representing a todo list with unfinished tasks that can be added, 
+    completed, and viewed."""
 
 def main() -> None:
     """Main method demonstrating the usage of the TodoList class."""

@@ -10,8 +10,8 @@ The constructor should take and store the name of the store and initialize an em
     of Items. (See the provided Item class.)
 A method add_items(self, *items: Item) -> None that accepts a variable number of 
     Item instances and appends all of them to the internal list in a single call.
-A method total(self, *categories: str) -> float that accepts a variable number of category 
-    names (matched against item names) and returns the sum of prices for only the matching 
+A method total(self, *item_names: str) -> float that accepts a variable number of item 
+    names (matched against Item names) and returns the sum of prices for only the matching 
     items. If no categories are passed, it should return the total of all items.
 The __str__(self) -> str method should return a formatted string listing every item and its 
     price, plus the grand total. The format of the output is up to you.
@@ -43,8 +43,10 @@ class Item:
         """Initialize an Item with the given name and price.
 
         Parameters:
-            name (str): The name of the item.
-            price (float): The price of the item.
+            name : str
+                The name of the item.
+            price : float
+                The price of the item.
         """
         self.name = name
         self.price = price
