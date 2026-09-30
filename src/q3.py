@@ -7,9 +7,9 @@ variable number of prices at once.
 Requirements:
 
 The constructor should take and store the name of the store and initialize an empty internal list 
-    of (item: str, price: float) entries.
-A method add_items(self, *items: tuple[str, float]) -> None that accepts a variable number of 
-    (item, price) tuples and appends all of them to the internal list in a single call.
+    of Items. (See the provided Item class.)
+A method add_items(self, *items: Item) -> None that accepts a variable number of 
+    Item instances and appends all of them to the internal list in a single call.
 A method total(self, *categories: str) -> float that accepts a variable number of category 
     names (matched against item names) and returns the sum of prices for only the matching 
     items. If no categories are passed, it should return the total of all items.
@@ -24,7 +24,7 @@ Make sure to write tests in test_q3.py.
 Example usage:
 
 receipt = Receipt("Corner Market")
-receipt.add_items(("Apples", 3.50), ("Bread", 4.25), ("Milk", 2.75))
+receipt.add_items(Item("Apples", 3.50), Item("Bread", 4.25), Item("Milk", 2.75))
 
 print(receipt.total())                     # 10.5
 print(receipt.total("Apples", "Milk"))     # 6.25
@@ -35,6 +35,25 @@ print(receipt)
 # Milk: $2.75
 # Total: $10.50
 """
+
+class Item:
+    """A class representing an item with a name and a price."""
+
+    def __init__(self, name: str, price: float) -> None:
+        """Initialize an Item with the given name and price.
+
+        Parameters:
+            name (str): The name of the item.
+            price (float): The price of the item.
+        """
+        self.name = name
+        self.price = price
+
+    def __eq__(self, other: object) -> bool:
+        """Check if this item is equal to another item."""
+        if not isinstance(other, Item):
+            return False
+        return self.name == other.name and self.price == other.price
 
 class Receipt:
     """A class representing a receipt for a store, which can accumulate line items 
