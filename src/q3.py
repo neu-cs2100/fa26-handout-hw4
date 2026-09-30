@@ -12,7 +12,7 @@ A method add_items(self, *items: Item) -> None that accepts a variable number of
     Item instances and appends all of them to the internal list in a single call.
 A method total(self, *item_names: str) -> float that accepts a variable number of item 
     names (matched against Item names) and returns the sum of prices for only the matching 
-    items. If no categories are passed, it should return the total of all items.
+    items. If no item names are passed, it should return the total of all items.
 The __str__(self) -> str method should return a formatted string listing every item and its 
     price, plus the grand total. The format of the output is up to you.
 The __eq__(self, other: object) -> bool method should return True if the other object is a 
